@@ -1,0 +1,15 @@
+# Core Django
+Django==5.2
+asgiref==3.8.1
+sqlparse==0.5.3
+tzdata==2025.2
+
+# Authentication
+django-allauth==65.7.0
+
+# Forms and UI
+django-crispy-forms==2.4
+crispy-bootstrap5==2025.4
+
+# Image Processing
+pillow==11.2.1
