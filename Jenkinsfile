@@ -12,13 +12,13 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'python -m venv venv'
+                sh 'python3 -m venv venv'
                 sh 'source venv/bin/activate && pip install -r requirements.txt'
             }
         }
         stage('Test') {
             steps {
-                sh 'source venv/bin/activate && python manage.py test'
+                sh 'source venv/bin/activate && python3 manage.py test'
             }
         }
         stage('Clean Old Docker Image') {
