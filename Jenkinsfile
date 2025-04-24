@@ -25,21 +25,21 @@ pipeline {
         }
         stage('Clean Old Docker Image') {
             steps {
-                sh 'docker rmi ${DOCKER_IMAGE}:latest || exit 0' 
+                sh 'sudo docker rmi ${DOCKER_IMAGE}:latest || exit 0' 
             }
         }
 
         stage('Docker Build') {
             steps {
-                sh "docker build -t ${DOCKER_IMAGE}:latest ."
+                sh "sudo docker build -t ${DOCKER_IMAGE}:latest ."
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'docker stop book-store || exit 0'
-                sh 'docker rm book-store || exit 0'
-                sh "docker run -d -p 8000:8000 --name book-store ${DOCKER_IMAGE}:latest"
+                sh 'sudo docker stop book-store || exit 0'
+                sh 'sudo docker rm book-store || exit 0'
+                sh "sudo docker run -d -p 8000:8000 --name book-store ${DOCKER_IMAGE}:latest"
             }
         }
     }
