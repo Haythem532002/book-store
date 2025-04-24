@@ -31,15 +31,15 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh "sudo docker build -t ${DOCKER_IMAGE}:latest ."
+                sh "docker build -t ${DOCKER_IMAGE}:latest ."
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'sudo docker stop book-store || exit 0'
-                sh 'sudo docker rm book-store || exit 0'
-                sh "sudo docker run -d -p 8000:8000 --name book-store ${DOCKER_IMAGE}:latest"
+                sh 'docker stop book-store || exit 0'
+                sh 'docker rm book-store || exit 0'
+                sh "docker run -d -p 8000:8000 --name book-store ${DOCKER_IMAGE}:latest"
             }
         }
     }
