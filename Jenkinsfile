@@ -48,7 +48,7 @@ pipeline {
             steps {
                 sh 'kubectl apply -f book-store-deploy.yaml'
                 sh 'kubectl apply -f book-store-service.yaml'
-                sh 'echo "Link of the app : " && minikube service book-store-service'
+                sh 'echo "Link of the app : " && minikube service book-store --url'
             }
         }
     }
