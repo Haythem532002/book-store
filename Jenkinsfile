@@ -3,6 +3,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = "haythem22/book-store"
         IMAGE_TAG = "latest"
+        MINIKUBE_HOME = "/home/haythem"
     }
     stages {
         stage('checkout') {
@@ -15,8 +16,6 @@ pipeline {
             steps {
                 sh 'python3 -m venv venv'
                 sh '. venv/bin/activate && pip install -r requirements.txt'
-
-
             }
         }
         stage('Test') {
