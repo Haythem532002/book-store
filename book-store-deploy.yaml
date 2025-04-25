@@ -15,7 +15,7 @@ spec:
         app: book-store
     spec:
       containers:
-        - name: haythem22/book-store
+        - name: book-store
           image: haythem22/book-store
           ports:
             - containerPort: 8000
