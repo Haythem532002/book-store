@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-store
+  labels:
+    app: book-store
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: book-store
+  template:
+    metadata:
+      labels:
+        app: book-store
+    spec:
+      containers:
+        - name: haythem22/book-store
+          image: haythem22/book-store
+          ports:
+            - containerPort: 8000
