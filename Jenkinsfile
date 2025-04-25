@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_IMAGE = "haythem22/book-store"
+        IMAGE_TAG = "latest"
     }
     stages {
         stage('checkout') {
