@@ -34,6 +34,14 @@ pipeline {
                 sh "docker build -t ${DOCKER_IMAGE}:latest ."
             }
         }
+        stage('Push to Docker Hub') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'haythem22-dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                    sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
+                    sh "docker push ${DOCKER_IMAGE}:${IMAGE_TAG}"
+                }
+            }
+        }
 
         stage('Deploy') {
             steps {
