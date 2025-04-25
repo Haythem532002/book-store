@@ -25,7 +25,11 @@ SECRET_KEY = '0^+(_hle=21u7)+sf(s5cab2r_)b7lv$i*jolj5!i@u8t9g1ho'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',  # Localhost
+    '192.168.49.2',  # Add this IP address
+    # Add other trusted domains or IPs if needed
+]
 
 
 # Application definition
