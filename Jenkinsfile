@@ -43,11 +43,11 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Deploy to Kubernetes') {
             steps {
-                sh 'docker stop book-store || exit 0'
-                sh 'docker rm book-store || exit 0'
-                sh "docker run -d -p 8000:8000 --name book-store ${DOCKER_IMAGE}:latest"
+                sh 'kubectl apply -f book-store-deploy.yaml'
+                sh 'kubectl apply -f book-store-service.yaml'
+                sh 'echo "Link of the app : " && minikube service book-store-service'
             }
         }
     }
@@ -56,6 +56,7 @@ pipeline {
             cleanWs()
         }
         success {
+            sh 'docker logout'
             echo 'Pipeline completed successfully!'
         }
         failure {
