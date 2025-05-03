@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = "haythem22/book-store"
+        DOCKER_IMAGE = "haythem22/book-store:latest"
         IMAGE_TAG = "latest"
         MINIKUBE_HOME = "/home/haythem"
         AZURE_RESOURCE_GROUP = "book-store-ressource"
