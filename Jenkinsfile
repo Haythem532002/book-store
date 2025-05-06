@@ -7,6 +7,7 @@ pipeline {
         AZURE_RESOURCE_GROUP = "book-store-ressource"
         AZURE_AKS_CLUSTER_NAME = "book-store-aks"
         AZURE_TENANT_ID = "dbd6664d-4eb9-46eb-99d8-5c43ba153c61" 
+        SONARQUBE_ENV = "sonar-q"
     }
     stages {
         stage('checkout') {
@@ -26,6 +27,20 @@ pipeline {
                 sh '. venv/bin/activate && python3 manage.py test'
             }
         }
+        stage('SonarQube analysis') {
+            steps {
+                withSonarQubeEnv('sonar-q') {
+                    sh '''
+                        sonar-scanner \
+                        -Dsonar.projectKey=book-store \
+                        -Dsonar.sources=. \
+                        -Dsonar.python.version=3 \
+                        -Dsonar.sourceEncoding=UTF-8
+                    '''
+                }
+            }
+        }
+
         stage('Clean Old Docker Image') {
             steps {
                 sh 'sudo docker rmi ${DOCKER_IMAGE}:latest || exit 0' 
