@@ -30,13 +30,14 @@ pipeline {
         stage('SonarQube analysis') {
             steps {
                 withSonarQubeEnv('sonar-q') {
-                    sh '''
-                        sonar-scanner \
-                        -Dsonar.projectKey=book-store \
-                        -Dsonar.sources=. \
-                        -Dsonar.python.version=3 \
-                        -Dsonar.sourceEncoding=UTF-8
-                    '''
+                    script {
+                        def scannerHome = tool 'SonarQubeScanner-7.1.0'
+                        sh "${scannerHome}/bin/sonar-scanner 
+                            -Dsonar.projectKey=book-store 
+                            -Dsonar.sources=. 
+                            -Dsonar.python.version=3 
+                            -Dsonar.sourceEncoding=UTF-8"
+                    }
                 }
             }
         }
