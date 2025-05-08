@@ -13,3 +13,5 @@ crispy-bootstrap5==2025.4
 
 # Image Processing
 pillow==11.2.1
+
+prometheus_client
