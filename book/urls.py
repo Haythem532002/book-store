@@ -15,8 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from prometheus_client import generate_latest, CONTENT_TYPE_LATEST
+from django.http import HttpResponse
+def metrics_view(request):
+    from prometheus_client import generate_latest
+    return HttpResponse(generate_latest(), content_type=CONTENT_TYPE_LATEST)
 
 urlpatterns = [
     path('', include("main.urls")),
     path('admin/', admin.site.urls),
+    path("metrics/", metrics_view),
 ]
+
