@@ -10,5 +10,7 @@ spec:
     - port: 80
       targetPort: 8000
       nodePort: 30010
+      protocol: TCP
+      name: http
   selector:
     app: book-store
