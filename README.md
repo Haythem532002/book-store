@@ -130,6 +130,3 @@ This project is provided under the MIT License — see `LICENSE` for details.
 
 Author: Haythem532002 — https://github.com/Haythem532002
 
----
-
-If you want any section expanded (detailed Jenkins pipeline docs, example Grafana dashboards, or automated AKS provisioning scripts), tell me which section and I'll add it.
