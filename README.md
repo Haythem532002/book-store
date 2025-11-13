@@ -27,12 +27,12 @@ See the included diagrams and screenshots in `imgs/` for architecture and pipeli
 
 Project screenshots:
 
-![Screenshot 1](imgs/Capture d'écran 2025-04-25 230538.png)
-![Screenshot 2](imgs/Capture d'écran 2025-04-25 231021.png)
-![Screenshot 3](imgs/Capture d'écran 2025-04-25 231040.png)
-![Screenshot 4](imgs/Capture d'écran 2025-04-29 011458.png)
-![Screenshot 5](imgs/Screenshot from 2025-05-10 00-53-54.png)
-![Screenshot 6](imgs/Screenshot from 2025-05-10 00-54-26.png)
+![Screenshot 1](imgs/Capture%20d%27%C3%A9cran%202025-04-25%20230538.png)
+![Screenshot 2](imgs/Capture%20d%27%C3%A9cran%202025-04-25%20231021.png)
+![Screenshot 3](imgs/Capture%20d%27%C3%A9cran%202025-04-25%20231040.png)
+![Screenshot 4](imgs/Capture%20d%27%C3%A9cran%202025-04-29%20011458.png)
+![Screenshot 5](imgs/Screenshot%20from%202025-05-10%2000-53-54.png)
+![Screenshot 6](imgs/Screenshot%20from%202025-05-10%2000-54-26.png)
 
 ## CI/CD (Jenkins)
 
@@ -129,4 +129,3 @@ This project is provided under the MIT License — see `LICENSE` for details.
 ## Contact
 
 Author: Haythem532002 — https://github.com/Haythem532002
-
